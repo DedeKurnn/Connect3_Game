@@ -132,18 +132,19 @@
         android:layout_marginStart="156dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="45dp"
-        android:text="Play Again"
+        android:layout_marginBottom="35dp"
         android:onClick="playAgain"
+        android:text="Play Again"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
@@ -155,12 +156,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         app:layout_constraintVertical_bias="0.385">
+        app:layout_constraintVertical_bias="0.385">
 
         <TextView
             android:id="@+id/yellowTextView"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Yellow"
             android:textAlignment="center"
@@ -169,8 +170,8 @@
 
         <TextView
             android:id="@+id/redTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Red"
             android:textAlignment="center"
@@ -179,7 +180,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
@@ -193,8 +194,8 @@
 
         <TextView
             android:id="@+id/yellowScoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="0"
             android:textAlignment="center"
@@ -202,8 +203,8 @@
 
         <TextView
             android:id="@+id/redScoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="0"
             android:textAlignment="center"
@@ -224,5 +225,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/replayBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="15dp"
+        android:text="Reset game"
+        android:onClick="resetGame"
+        app:layout_constraintBottom_toTopOf="@+id/playAgainBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

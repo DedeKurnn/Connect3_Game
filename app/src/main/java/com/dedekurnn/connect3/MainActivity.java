@@ -70,12 +70,26 @@ public class MainActivity extends AppCompatActivity {
                     Button playAgainButton = findViewById(R.id.playAgainBtn);
                     playAgainButton.setVisibility(View.VISIBLE);
                     gameActive = false;
+                } else if (checkGameState()) {
+                    Button playAgainButton = findViewById(R.id.playAgainBtn);
+                    playAgainButton.setVisibility(View.VISIBLE);
                 }
             }
         }
     }
+    public boolean checkGameState () {
+        boolean isBoardFull = true;
+        androidx.gridlayout.widget.GridLayout gridLayout = findViewById(R.id.gridLayout);
+        for (int i = 0; i < gridLayout.getChildCount(); i++) {
+            ImageView reset = (ImageView) gridLayout.getChildAt(i);
+            if(reset.getDrawable() == null) {
+                isBoardFull = false;
+            }
+        }
+        return isBoardFull;
+    }
 
-    public void playAgain(View view) {
+    public void btnFunction() {
         Button playAgainButton = findViewById(R.id.playAgainBtn);
         playAgainButton.setVisibility(View.INVISIBLE);
 
@@ -93,7 +107,18 @@ public class MainActivity extends AppCompatActivity {
         activePlayer = 0;
         gameActive = true;
     }
-
+    public void playAgain(View view) {
+        btnFunction();
+    }
+    public void resetGame(View view) {
+        TextView yellowScoreTextView = findViewById(R.id.yellowScoreTextView);
+        TextView redScoreTextView = findViewById(R.id.redScoreTextView);
+        btnFunction();
+        redPlayerScore = 0;
+        yellowPlayerScore = 0;
+        yellowScoreTextView.setText(String.format(java.util.Locale.US,"%d", yellowPlayerScore));
+        redScoreTextView.setText(String.format(java.util.Locale.US,"%d", redPlayerScore));
+    }
 
 
 }
